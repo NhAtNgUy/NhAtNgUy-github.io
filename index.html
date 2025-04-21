@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #0a0a23; color: white; }
+    .hero-bg { background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('back.jpg'); background-size: cover; background-position: center; }
+    .page { display: none; }
+    .page.active { display: block; } 
+    .service-content { 
+      margin-bottom: 2rem; 
+      line-height: 1.6; 
+      text-align: justify;
+      max-height: 500px; 
+      overflow-y: auto; 
+    }
+    .service-content2 { 
+      margin-top: 2rem; 
+      line-height: 1.6; 
+      text-align: justify;
+      max-height: 200px;  
+    }
+
+    .service-content3 { 
+      margin-top: 2rem; 
+      line-height: 1.6; 
+      text-align: justify;
+      max-height: 300px;  
+      overflow-y: auto;
+    }
+
+    .service-content31 { 
+      margin-top: 2rem; 
+      line-height: 1.6; 
+      text-align: justify;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .service-content p { 
+      margin-bottom: 1rem; 
+      line-height: 1.5; 
+      text-align: justify; 
+    }
+
+    .service-content3 p { 
+      margin-bottom: 1rem; 
+      margin-left: 1rem;
+    }
+    .service-content3 ul { 
+      padding-left: 2rem; 
+      margin-top: 0.5rem; 
+      margin-bottom: 1rem; 
+      
+    }
+    .service-content3 ul li { 
+      margin-bottom: 0.5rem; 
+      text-align: left; 
+      margin-left: 1rem;
+    }
+    .service-content3 ol { 
+      padding-left: 2rem; 
+      margin-top: 1rem; 
+    }
+    .service-content3 ol li { 
+      margin-bottom: 0.75rem; 
+      text-align: left; 
+    }
+
+    .service-content3 h3 {
+      text-indent: 1rem;
+    }
+    .service-content3 h4 {
+      text-indent: 1rem;
+    }
+
+    .service-content4 li {
+      line-height: 3rem;
+    }
+    .service-content4 { 
+      margin-bottom: 2rem; 
+      line-height: 1.6; 
+      text-align: justify;
+      max-height: 500px; 
+      max-width: 800px;
+      overflow-y: auto;
+    }
+    .service-image img {
+      width: 100%; 
+      height: 500px; 
+      object-fit: cover;
+      border-radius: 0.5rem;
+    }
+
+    /* Slider Styles */
+    .slider-container {
+      position: relative;
+      width: 500px; 
+      height: 300px; 
+      margin: 0 auto; 
+      overflow: hidden; 
+    }
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slider img {
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 1.5rem;
+      border-radius: 50%;
+    }
+    .slider-btn.prev { left: 10px; }
+    .slider-btn.next { right: 10px; }
+  </style>
+</head>
+<body class="font-sans">
+  <!-- Navigation Bar -->
+  <nav class="bg-[#0a0a23] text-white p-4 fixed w-full top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">VMA's Website</h1>
+      <ul class="flex space-x-6">
+        <li><a href="#" onclick="showPage('home')" class="hover:text-blue-400">Home</a></li>
+        <li><a href="#" onclick="showPage('about')" class="hover:text-blue-400">About</a></li>
+        <li><a href="#" onclick="showPage('services')" class="hover:text-blue-400">Contents</a></li>
+        <li><a href="#" onclick="showPage('references')" class="hover:text-blue-400">Reference</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div id="home" class="page active">
+  <section class="hero-bg h-screen flex items-center justify-center text-center pt-16">
+    <div>
+      <div class="flex justify-center space-x-4 mb-4">
+        <a href="https://www.facebook.com/minh.anh.775442" class="text-white hover:text-blue-400"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.instagram.com/_.babibuu._?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white hover:text-blue-400"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+      <h1 class="text-6xl font-bold mb-4">I'm Vo Minh Anh</h1>
+      <p class="text-lg mb-6 max-w-2xl mx-auto">
+        Hi I'm the third-year student at FTU and this is my first website for the Digital Marketing class. I hope that could bring something useful to you. Have a nice day!!!
+      </p>
+    </div>
+  </section>
+</div> 
+
+  <!-- About Me Section -->
+  <div id="about" class="page">
+    <section class="container mx-auto py-16">
+    <div class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2">
+        <img src="about_me.jpg" alt="About Me" class="rounded-lg">
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="text-3xl font-bold mb-4 border-b-4 border-blue-500 inline-block">About My Project</h2>
+        <p class="mb-4">
+          In this project, there are totally four main part, including "The ladder of engagement", "Evaluatin of a social media platform", "Website checklist", and "Trend Analysis". 
+        </p>
+        <p class="mb-4">
+          Each part will have its own contents that I want to convey. Let's use the menu above to start explore it!!!
+        </p>
+        <h3 class="text-xl font-semibold mb-2">My Table of Contents</h3>
+        <div class="space-y-4">
+          <div>
+            <p>
+              1.	The ladder of engagement	</p>
+            <p style="text-indent: 2em">  
+               Definition	</p>
+
+               <p style="text-indent: 2em">    
+                Ladder Level	</p>
+                <p style="text-indent: 2em">
+                LEGO Strategy	</p>
+                <p>
+              2.	Evaluatin of a social media platform	</p>
+              <p style="text-indent: 2em">
+                2.1.	How marketers use Threads in social	</p>
+                <p style="text-indent: 2em">
+                2.2.	Evaluation Using the RACE framework	</p>
+                <p>
+              3.  Website checklist</p>
+              <p style="text-indent: 2em"> 
+                3.1.  Essential Elements of a Website</p>
+                <p style="text-indent: 2em">
+                3.2. Creating a good website: Key factors</p>
+                <p style="text-indent: 2em">
+                3.3.	real-world application : Mikenco.vn website</p>
+                <p>
+              4. Trend Analysis</p>
+              <p>
+              REFERENCES</p>
+
+
+            </p>
+        <div class="mt-6 grid grid-cols-2 gap-4">
+          <div>
+            <p><strong>Name:</strong> Vo Minh Anh</p>
+            <p><strong>Email:</strong>vma@gmail.com </p>
+          </div>
+          <div>
+            <p><strong>Phone:</strong>0987654321 </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div> 
+
+  <!-- Services Page -->
+  <div id="services" class="page">
+    <section class="container mx-auto py-16">
+      <h2 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-500 inline-block">1. Ladder of Engagement</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg service-content">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-400">Definition</h3>
+          <p>
+            The Ladder of Engagement is a hierarchical model that illustrates the stages consumers typically progress through as they interact more deeply with a brand (Angela, 2024). Each rung of the ladder corresponds to an escalating level of involvement, influence, and emotional investment (Fournier & Avery, 2011).
+          </p>
+          <p>
+            At the base, consumers are merely observers, passively consuming brand content (Angela, 2024). As they ascend, their engagement becomes more participatory and advocacy-driven, culminating in leadership roles within brand communities (Fournier & Avery, 2011).
+          </p>
+          <h4 class="text-lg font-semibold mt-6 mb-3">Stages of the Ladder of Engagement:</h4>
+          <p style="text-indent: 1em">
+            <strong>1.Observing:</strong> Consumers at this stage passively view content without engaging (Angela, 2024).
+          </p>
+            <p style="text-indent: 1em">  
+            <strong>2.Following:</strong> Users begin to follow or subscribe to brand content on various platforms <p style="text-indent: 0.5em">(Angela, 2024).</p>
+          </p>
+          
+            <p style="text-indent: 1em">  
+            <strong>3.Endorsing:</strong> They engage by liking, commenting on, or sharing content (Angela, 2024).
+          </p>
+            <p style="text-indent: 1em">   
+            <strong>4.Contributing:</strong> Consumers generate their own content, provide feedback, or participate in collaborative activities (Angela, 2024).
+          </p>
+            <p style="text-indent: 1em"> 
+            <strong>5.Owning:</strong> A sense of identity with the brand emerges, fostering loyalty and belonging <p style="text-indent: 0.5em">(Fournier & Avery, 2011).</p>
+          </p>
+            <p style="text-indent: 1em">  
+            <strong>6.Leading:</strong> Consumers advocate on behalf of the brand, influence others, and act as informal ambassadors (Angela, 2024).
+        </p>
+
+      <p>  
+        This ladder provides both a diagnostic tool and a strategic guide for marketers aiming to foster deeper consumer relationships (Fournier & Avery, 2011).
+      </p>
+        </div>
+
+        <div>
+          <img src="Fig1.png" alt="Fig 1" >
+        </div>
+      </div>
+
+      <div style="padding: 50px;"> </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="service-image">
+          <img src="Fig2.png" alt="Fig 2">
+        </div>
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg service-content">
+          <h3 class="text-2xl font-semibold mb-4 text-blue-400">Ladder Level LEGO Strategy</h3>
+          <p>
+            The LEGO Group offers a compelling case study for the Ladder of Engagement (Angela, 2024). The brand has effectively utilized each stage to build a global community of loyal and participatory fans (Fournier & Avery, 2011).
+            At the Observing level, LEGO employs targeted advertising and multimedia strategies such as YouTube shorts and cinematic features like The LEGO Movie - to attract wide, often younger, audiences (Angela, 2024). By combining traditional advertising with immersive storytelling and cross-platform content, LEGO ensures its brand remains highly visible and emotionally resonant - even at this foundational Observing level, where the audience may not yet critically evaluate the media but are clearly influenced by its techniques.
+
+           </p>
+
+           <p>
+            Once engaged, users move to the Following stage. LEGO boasts over 20 million followers across its Instagram, Facebook, and YouTube channels, maintaining a steady flow of branded content that keeps audiences connected (Angela, 2024).
+           </p>
+
+           <p>
+            Audiences start actively interacting with, promoting, and emotionally investing in media content at the Endorsing stage of media literacy, going beyond passive consumption. This level is demonstrated by LEGO fans' active involvement in online forums, product interaction, and content production. For example, on social media sites like Instagram and Reddit, product reveal postings for themed sets like Star Wars or Harry Potter routinely garner thousands of likes, shares, and fervent comments, indicating a deep emotional and interactive connection with the brand (Angela, 2024).
+           </p>
+
+           <p> 
+            Through community-driven platforms and participatory campaigns, LEGO deliberately encourages this kind of interaction. LEGO Ideas, an effort that encourages enthusiasts to contribute creative LEGO set designs, is a good example. Fans become co-creators of the brand when a submission receives more than 10,000 public votes and is considered for possible manufacture by LEGO (LEGO Group, 2023). In addition to giving users more power, this strengthens their bond with LEGO items and increases their loyalty.
+           </p> 
+
+           <p>
+            Additionally, LEGO encourages fans to construct and share holiday-themed masterpieces online through seasonal social media campaigns like #BuildToGive. LEGO combines creativity, community service, and social responsibility by donating a set to a kid in need for each shared build (LEGO Foundation, 2023). In keeping with the larger ideals of charity and inventiveness, these initiatives encourage brand ambassadors to freely promote the company.
+           </p> 
+
+           <p> 
+            Moving further, the Contributing stage is represented by the innovative LEGO Ideas platform, where fans can submit designs for potential new products (Angela, 2024). Winning submissions are transformed into commercially available sets, merging consumer creativity with corporate strategy (Angela, 2024).
+           </p>
+
+           <p> 
+            In the Owning stage, adult fans of LEGO often referred to as AFOLs (Adult Fans of LEGO) organize clubs, attend conventions, and embody the brand’s values of creativity and imagination (Angela, 2024). These groups serve not only as consumers but as brand custodians (Fournier & Avery, 2011).
+           </p>
+
+           <p> 
+            At the pinnacle of the ladder, Leading, LEGO engages with its most devoted community members through the LEGO Ambassador Network (Angela, 2024). These individuals act as spokespeople, host large fan conventions such as BrickCon, and provide direct feedback to the company, essentially co-creating the brand narrative (Angela, 2024).
+           </p>
+        </div>
+      </div>
+      <h2 class="text-3xl font-bold mb-12 text-center ">More Pictures About Lego</h2>
+        <div class="slider-container" id="slider1">
+          <div class="slider" id="slider1-content">
+            <img src="Fig3.png" alt="Fig 3">
+            <img src="Fig4.png" alt="Fig 4">
+            <img src="Fig5.png" alt="Fig 5">
+            <img src="Fig6.png" alt="Fig 6">
+            <img src="Fig7.png" alt="Fig 7">
+            <img src="Fig8.png" alt="Fig 8">
+            <img src="Fig9.png" alt="Fig 9">
+          </div>
+          <button class="slider-btn prev" onclick="changeSlide('slider1', -1)">❮</button>
+          <button class="slider-btn next" onclick="changeSlide('slider1', 1)">❯</button>
+        </div>
+    </section>
+
+    <section class="container mx-auto py-16">
+      <h2 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-500 inline-block">2.	Evaluation of a social media platform</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <img style="width:250px; height:250px; margin: 50px;" src="Fig10.png" alt="Fig 10"> 
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg service-content2">
+        <p>
+          <center>Social work marketers are increasingly using new channels to spread their ideas and create communities as digital environments change. For social marketers looking for real-time communication and community involvement, Meta's 2023 launch of Threads offers a special chance (Meta, 2023). In order to assess how well Threads facilitates social marketing initiatives, this paper applies Chaffey's (2023) RACE Framework (Reach, Act, Convert, Engage)</center>
+        </p>
+      </div>
+      </div>
+
+      <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+        <h3 class="text-xl font-semibold mt-4 mb-4">2.1. How Marketers Use Threads in Social</h3>
+            <p style="text-indent: 1em">
+              Whether on sites like Instagram Threads, X (previously Twitter), or even structured multi-post formats on Facebook and LinkedIn, threads have become a vital tool for marketers looking to tell in-depth stories, increase engagement, and direct audience involvement.
+            </p>
+            <h4 class="text-lg font-semibold mt-4 mb-2">1. Storytelling and Narrative Building</h4>
+            <p style="text-indent: 1em">
+              Marketers use threads to break down complex information into bite-sized, digestible posts, which makes it easier for audiences to follow and stay engaged. This format is especially useful for:
+            </p>
+            <ul class="list-disc">
+              <li>Product launches (explaining features step-by-step)</li>
+              <li>Brand storytelling (sharing origin stories or behind-the-scenes insights)</li>
+              <li>Case studies or testimonials (showcasing success in a sequential flow)</li>
+            </ul>
+            <p>
+              This approach increases emotional connection and retention of information, as each post builds on the last.
+            </p>
+            <h4 class="text-lg font-semibold mt-4 mb-2">2. Driving Algorithmic Reach and Engagement</h4>
+            <p style="text-indent: 1em">
+              Users are encouraged by threads to continue scrolling, liking, reacting, and sharing essential actions that social media algorithms reward. Every post in a thread offers a chance to be seen, increasing the likelihood that it will show up in feeds and trending areas.
+            </p>
+            <h4 class="text-lg font-semibold mt-4 mb-2">3. Educational and Value-Driven Content</h4>
+            <p style="text-indent: 1em">
+              Many creators and brands use threads to provide value-first marketing, such as data breakdowns, industry insights, how-tos, or recommendations. In addition to establishing credibility and trust with the audience, this establishes the brand as a thought leader.
+            </p>
+            <h4 class="text-lg font-semibold mt-4 mb-2">4. Building Conversations and Community</h4>
+            <p>
+              Threads are a great way to spark conversation. Marketers often end threads with questions, polls, or calls to action like:
+            </p>
+            <ul class="list-disc">
+              <li>“What do you think?”</li>
+              <li>“Tag a friend who needs this!”</li>
+              <li>“Reply with your favorite example.”</li>
+            </ul>
+            <p>
+              This encourages interaction and fosters a sense of community and two-way communication—vital for brand loyalty.
+            </p>
+            <h4 class="text-lg font-semibold mt-4 mb-2">5. Event or Campaign Coverage</h4>
+            <p style="text-indent: 1em">
+              Brands utilize threads to give real-time narrative, updates, and reactions during live events, product drops, and social campaigns. As a result, material becomes more timely and dynamic and fans remain interested over time.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-[70%_30%] gap-10 mt-20">
+          <div class="bg-gray-800 p-6 rounded-lg shadow-lg service-content31">
+            <h3 class="text-xl font-semibold mb-4">2.2. How Marketers Use Threads in Social</h3>
+            <h4 class="text-lg font-semibold mt-4 mb-2">1. Reach</h4>
+            <p style="text-indent: 1em">
+              The first phase of the RACE framework, Reach, focuses on building brand or campaign awareness across digital channels (Chaffey, 2023). On Threads, social marketers utilize short, compelling messages to grab attention and enhance the visibility of social causes or brand messaging. For instance, campaigns often leverage hashtags like #MentalHealthMatters or #ZeroWaste during awareness weeks to foster organic engagement and align with trending social conversations (Lee, 2023).</p>
+            <p>
+              Compared to well-known behemoths like X or Instagram, Threads is a growing but still specialized site, with over 160 million registered members and over 10 million monthly active users as of early 2024 (Statista, 2024). Nevertheless, its integration with Instagram greatly increases discoverability, enabling advertisers to easily contact followers on both platforms, reuse creative assets, and cross-promote content (Meta, 2023). Consistent branding and increased content visibility are supported by this interoperability.
+            </p>
+            <p>
+              One of Threads’ primary strengths lies in its clean, ad-free environment and focus on conversations, which can foster more authentic engagement - particularly valuable for cause-driven campaigns or early-stage brand building. However, its limited targeting tools, lack of in-depth analytics, and relatively small active user base present challenges for large-scale marketing efforts (Ahmed, 2024).
+            </p>
+
+            <p>
+              Not with standing these drawbacks, Threads' Reach stage is still essential for gaining first audience awareness, particularly when aiming to reach younger, mobile-first audiences or testing out new markets. When included into a larger omnichannel communication strategy, Threads is a helpful tool because of its capacity to initiate discussions rapidly, amplify messages via Instagram Stories, and leverage trends for discoverability.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-2">
+            <img style="width:350px; height:450px;" src="e1.png">
+            <img style="width:350px; height:450px;" src="e2.png">
+          </div>
+            <h4 class="text-lg font-semibold mt-4 mb-2">2. Act</h4>
+            <p style="text-indent: 1em">
+              In the Act phase, the goal is to encourage interaction, such as liking, replying, commenting, or clicking through to more information (Chaffey, 2023). Threads excels in this area, with its dialogue-first design encouraging users to engage in meaningful conversations (Nguyen, 2024). Social work campaigns often include calls for reflection or participation, such as “Share your story,” or “What does equality mean to you?” driving higher interaction rates than one-way platforms (Thomas, 2024). Threads also allows poll-like engagement, where follow-up comments gauge public sentiment on pressing issues (Wilson, 2024).            </p>
+              <center><img style="width:550px; height:250px;" src="e3.png"></center>
+              <h4 class="text-lg font-semibold mt-4 mb-2">3.Convert</h4>
+              <p style="text-indent: 1em">
+                The Convert stage focuses on turning engagement into concrete action, such as signing petitions, donating, or joining advocacy campaigns (Chaffey, 2023). While Threads currently lacks native tools like donation buttons or embedded links, marketers still drive conversions by linking to external websites in their profiles or directing users to Instagram Stories or bios for clickable links (Parker, 2024). This workaround allows campaigns to maintain momentum, although it still limits frictionless conversion compared to other platforms (White, 2024). Nevertheless, community trust built on Threads helps convert active followers into participants or supporters (Davies, 2024). </p>  
+                <center><img style="width:550px; height:350px;" src="e4.png"></center>
+                <h4 class="text-lg font-semibold mt-4 mb-2">4. Engage</h4>
+                <p style="text-indent: 1em">
+                  The final stage, Engage, is about building long-term relationships and loyalty (Chaffey, 2023). On Threads, social marketers maintain engagement by providing frequent updates, celebrating community wins, and highlighting user-generated content (Clark, 2024). Marketers often repost replies from users who share their own stories, making the conversation feel communal and inclusive (Andrews, 2023). The platform’s minimalist format reduces distractions, helping followers stay focused on the core message and participate consistently (Chen, 2024). As a result, Threads fosters a sense of belonging essential for sustained advocacy (Garcia, 2024).
+                  </p>  
+                  <center><img style="width:350px; height:550px;" src="e5.png"></center>
+              </div>
+              
+              <img style="width:350px; height:450px;" class="mt-20" src="Fig11.png" alt="Fig 11"> 
+
+       
+          </div>
+    </section>
+
+    <section class="container mx-auto py-16">
+      <h2 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-500 inline-block">3.	Website checklist</h2>
+      <p style="text-indent: 1em">
+        Whether on sites like Instagram Threads, X (previously Twitter), or even structured multi-post formats on Facebook and LinkedIn, threads have become a vital tool for marketers looking to tell in-depth stories, increase engagement, and direct audience involvement.
+      </p>
+
+      <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+        <h3 class="text-xl font-semibold mt-4 mb-4">3.1. Essential Elements of a Website</h3>
+            <p style="text-indent: 1em">
+              A well-structured website typically includes the following elements:</p>
+              <p style="text-indent: 2em">
+1.	Homepage – This is the face of the website. It should have a clear value proposition, call-to-action (CTA), and easy navigation (Krug, 2014).
+</p>
+
+<p style="text-indent: 2em">
+2.	Navigation Bar – Intuitive navigation improves user experience and helps users find content faster (Nielsen, 2020).
+</p>
+<p style="text-indent: 2em">
+3.	Content Pages – These include About Us, Services, Blog, and Contact pages. Each should be optimized for clarity and relevance (Fishkin, 2018).
+</p>
+<p style="text-indent: 2em">
+4.	Visual Elements – High-quality images, icons, and illustrations enhance the visual appeal and communicate brand identity (Lidwell et al., 2010).
+</p>
+<p style="text-indent: 2em">
+5.	Responsive Design – A website must be mobile-friendly and adapt to various screen sizes (Marcotte, 2010).
+</p>
+<p style="text-indent: 2em">
+6.	Search Functionality – For content-heavy websites, a search bar increases accessibility (Morville & Rosenfeld, 2006).
+</p>
+<p style="text-indent: 2em">
+7.	Footer – Often includes social links, contact info, newsletter signup, and legal disclaimers (Krug, 2014).
+</p>
+
+<p style="text-indent: 2em">
+8.	SSL Certificate – Security is fundamental; HTTPS ensures data protection (Google Developers, 2022).
+              </p>
+        </div>
+        <center><img style="width:650px; height:350px;" src="Fig12.png" alt="Fig 12"></center>
+
+        <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+          <h3 class="text-xl font-semibold mt-4 mb-4">3.2. Creating a good website: Key factors</h3>
+          <p style="text-indent: 1em">
+            -  User Experience (UX)</p>
+            <p style="text-indent: 2em">
+              UX focuses on ease of use, engagement, and emotional impact. A good website minimizes cognitive load and maximizes efficiency (Norman, 2013).
+              </p>
+
+              <p style="text-indent: 1em">
+                -  Speed Optimization</p>
+                <p style="text-indent: 2em">
+                  Google states that 53% of mobile users abandon sites that take longer than three seconds to load (Google, 2018). Techniques include image compression, caching, and code minification.                  </p>
+                  <p style="text-indent: 1em">
+                    -  SEO (Search Engine Optimization)</p>
+                    <p style="text-indent: 2em">
+                      Keyword research, meta tags, alt text, and fast loading speeds help improve a site’s visibility in search engines (Fishkin, 2018).
+                    </p>
+                    <p style="text-indent: 1em">
+                      -  Accessibility</p>
+                      <p style="text-indent: 2em">
+                        Following WCAG guidelines ensures that users with disabilities can access the site (W3C, 2023).
+                      </p>
+
+                      <p style="text-indent: 1em">
+                        -  Content Strategy</p>
+                        <p style="text-indent: 2em">
+                          Content should be informative, engaging, and updated regularly to retain users and improve SEO (Content Marketing Institute, 2022).
+                        </p>
+</div>
+<center><img style="width:650px; height:450px;" src="Fig13.png" alt="Fig 13"></center>
+
+                        <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+                          <h3 class="text-xl font-semibold mt-4 mb-4">3.3.real-world application : Mikenco.vn website</h3>
+                          <p style="text-indent: 2em">
+                            In today’s digital marketplace, a well-structured, user-centric website is essential for attracting and retaining customers. Evaluating Mikenco.vn against the essential website elements reveals a strong foundation, with room for strategic improvements to optimize usability, performance, and brand communication.                            </p>
+                            <p>
+                              1.  Homepage:	</p>
+                            <p style="text-indent: 2em">
+                              The homepage should effectively communicate the brand's value proposition since it is the user's initial impression of the website. Mikenco.vn has an eye-catching design with product displays, promotional highlights, and large banners. Although its dynamic product sections and excellent photography effectively attract attention, it is devoid of a succinct description of the brand's unique selling points. Mikenco's brand would be made clearer and visitors would be immediately engaged if the homepage included a succinct, catchy motto or mission statement.
+                              </p>
+
+                              <p>
+                                2. Navigation Bar	</p>
+                              <p style="text-indent: 2em">
+                                Users may browse with ease thanks to the user-friendly navigation and product categories including T-shirts, Polo, Jeans, and Accessories. The dynamic and fluid dropdown menus facilitate a seamless user experience. It fits in nicely with usability and organization best practices.                                </p>
+
+                                <p>
+                                  3. Content Pages	</p>
+                                <p style="text-indent: 2em">
+                                  Mikenco.vn has a number of educational pages, including "The Story," "Recruitment," "FAQs," and "Policies." Credibility and transparency are improved by these pages. The "About" section, which is called "The Story," is a little obscured in the menu, though. By more clearly describing the brand's story, prominently showcasing this material could increase consumer trust and emotional connection.                                  </p>
+                                  <p>
+                                    4. Visual Elements	</p>
+                                  <p style="text-indent: 2em">
+                                    The website uses uniform layout and slick, high-quality product photos to create a powerful and unified brand identity. Icons, banners, and product thumbnails are eye-catching and efficiently encourage user interaction.                                    </p>
+                                    <p>
+                                      5. Responsive Design  	</p>
+                                    <p style="text-indent: 2em">
+                                      The website works effectively on a variety of devices and adjusts to various screen sizes with ease. Users can explore and shop with ease on both desktop and mobile devices, which is crucial considering the growing importance of mobile traffic.                                      </p>
+                                      <p>
+                                        6. Search Functionality	</p>
+                                      <p style="text-indent: 2em">
+                                        A search bar is located at the top of the homepage, allowing users to quickly find specific items. This is especially important for e-commerce platforms with large inventories.                                        </p>
+                                        <p>
+                                          7. Footer	</p>
+                                        <p style="text-indent: 2em">
+                                          The footer includes vital elements such as contact information, customer service links, policies, and social media icons. This ensures easy access to secondary navigation and boosts trust by showing transparency.                                          </p>
+                                          <p>
+                                            8. SSL Certificate and Security	</p>
+                                          <p style="text-indent: 2em">
+                                            Mikenco.vn ensures secure connection by using HTTPS. To comply with online security best practices, it would be advantageous to examine and update out-of-date libraries or unsafe resource loading, nonetheless, according to prior performance data.                                            </p>
+                                            <p>
+                                              <b>Performance and Optimization</b>	</p>
+                                            <p style="text-indent: 2em">
+                                              Google PageSpeed Insights results show that Mikenco.vn scores high in performance on mobile, especially with fast load times (LCP and FCP). However, areas like accessibility (score: 76) and best practices (score: 57) require attention. Enhancing contrast ratios, adding alt text to images, and ensuring keyboard navigability could greatly improve accessibility. Meanwhile, updating legacy code and enforcing HTTPS on all resources would boost security and trust.                                              </p>
+                                              <p>
+                                                <b>Conclusion	</b></p>
+                                              <p style="text-indent: 2em">
+                                                Mikenco.vn demonstrates a solid understanding of modern web design principles. With excellent visuals, responsive design, and strong performance metrics, it offers a satisfying user experience. However, to reach its full potential, the site should emphasize its value proposition more clearly, enhance accessibility, and implement current best practices for SEO and web security. By addressing these areas, Mikenco.vn can transform from a high-performing e-commerce site to a fully optimized digital storefront that attracts, retains, and converts users more effectively.                                                </p>
+                                                </div>
+                                                <h2 class="text-3xl font-bold mb-4 mt-10 text-center ">Mikenco's website</h2>                                      
+                                                  <div class="slider-container" id="slider2">
+                                                    <div class="slider" id="slider2-content">
+                                                      <img src="Fig 14.png" alt="Fig 14">
+                                                      <img src="e6.png" alt="e6">
+                                                      <img src="e7.png" alt="e7">
+                                                    </div>
+                                                    <button class="slider-btn prev" onclick="changeSlide('slider2', -1)">❮</button>
+                                                    <button class="slider-btn next" onclick="changeSlide('slider2', 1)">❯</button>
+                                                  </div>
+                                                  <h2 class="text-3xl font-bold mb-8 mt-16 text-center ">Mikenco's Pagespeed Insights test result</h2>                                      
+
+                                                  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-2">
+                                                  <img style="width:650px; height:350px;" src="e8.png" alt="e6">
+                                                    <img style="width:650px; height:350px;" src="e9.png" alt="e7">
+                                                  </div>
+                                              </section>
+
+                <section class="container mx-auto py-16">
+                   <h2 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-500 inline-block">4. Trend Analysis </h2>
+                   <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+                    <h3 class="text-xl font-semibold mt-2 mb-4">Trend Analysis from a Marketing Perspective: The Rise of Short-Form Video </h3>
+                    </div>
+                    <div class="bg-gray-800 p-2 rounded-lg shadow-lg service-content3">
+                      <h3 class="text-xl font-semibold mt-4 mb-4">Content </h3>
+                      <p style="text-indent: 2em">
+                        In modern marketing, trend analysis is a strategic necessity. It involves observing shifts in consumer behavior, technological innovation, and platform dynamics to anticipate where attention and engagement will flow next (Kotler et al., 2021). From a marketer’s viewpoint, analyzing and leveraging the right trends can be both a powerful asset and a significant challenge.                        <p>
+                          <h3 class="text-xl font-semibold mt-4 mb-4">Opportunities and Advantages </h3>
+                          <p style="text-indent: 2em">
+                            One of the most notable developments in digital media is the rapid growth of short-form video content, which is led by websites like YouTube Shorts, Instagram Reels, and TikTok. Videos that last less than 60 seconds are a very effective means of communication since current audiences have shorter attention spans and are more inclined to consume bite-sized content (Leung et al., 2021). With this approach, marketers can swiftly tell engaging tales, take use of platform algorithms to reach a wider audience, and establish a more relaxed, relatable connection with younger people.
+Additionally, short-form films are incredibly convenient for both producers and audiences. Compared to long-form material, the production process usually requires fewer resources and less time for producers, which facilitates the production of consistent results. Short films fit in well with today's fast-paced lifestyle because they are convenient for viewers to watch while on the go, whether it be during breaks, commutes, or while multitasking. The possibility of recurring viewing and interaction is increased by this accessibility.
+Research has demonstrated that short-form content, particularly that which is amusing, genuine, or emotionally impactful, greatly improves user engagement and brand recall (WARC, 2023). Additionally, because it is shared, users frequently repost, remix, or comment on information that speaks to them, which increases visibility. Companies who modify their messaging to fit this fast-paced, dynamic approach might benefit from deeper, more organic audience connection in addition to greater exposure (Lipschultz, 2021).
+                            </p>
+                            <h3 class="text-xl font-semibold mt-4 mb-4">Challenges and Risks</h3>
+                            <p style="text-indent: 2em">
+                              Notwithstanding these benefits, there are a number of drawbacks to short-form video marketing. First, creative teams and budgets are under pressure to produce consistent, new content (Smith, 2022). A popular sound or visual format might go out of style in a matter of days, so businesses need to move quickly to remain relevant.
+Second, this structure isn't appropriate for all brands. There is a thin line between producing something that is culturally appropriate and coming out as forced or out of touch. Inauthentic attempts to "go viral" might result in negative feedback and harm brand perception (Kotler et al., 2021). Additionally, marketers need to make sure that their short-form content stays in line with more general strategy objectives rather than merely aiming for likes or clicks.
+                              </p>
+                              <h3 class="text-xl font-semibold mt-4 mb-4">Strategic Applications for Brands</h3>
+                              <p style="text-indent: 2em">
+                                Marketers need a well-defined plan in order to take advantage of the short-form video trend. Finding important brand storylines that can be distilled into powerful images is the first step in this process. In order to properly time their postings, marketers should then keep an eye on popular subjects and formats utilizing resources like Instagram Insights or TikTok's Creative Center (Chaffey & Ellis-Chadwick, 2019).
+Encouraging content producers, such as staff members or devoted clients, to produce or co-create content is also crucial. This broadens the creative spectrum and provides authenticity. Lastly, marketers should use sentiment, engagement quality, and alignment with long-term positioning in addition to views to gauge performance (Kaplan & Haenlein, 2020).
+                                  </p>
+                                  <h3 class="text-xl font-semibold mt-4 mb-4">Conclusion</h3>
+                              <p style="text-indent: 2em">
+                                In conclusion, short-form video content is a powerful marketing trend with enormous upside potential, but only if brands approach it strategically. Through careful analysis, rapid execution, and authentic storytelling, marketers can turn this trend into a sustainable competitive advantage rather than just another passing fad.
+                                </p>
+                                
+    </div>
+    <center><img style="width:350px; height:650px;" class="mt-10" src="e10.png" alt="e7"></center>
+  </div>
+
+  <div id="references" class="page">
+    <section class="container mx-auto py-16">
+      <h2 class="text-3xl font-bold mb-12 text-center border-b-4 border-blue-500 inline-block">References</h2>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg service-content4 mx-auto max-w-7xl">
+        <ul class="list-none">
+          <li>Ahmed, R. (2024) Limitations of Emerging Social Platforms: Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Andrews, K. (2023) User-Generated Engagement on Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Angela (2024) The Ladder of Engagement in Digital Marketing. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Chaffey, D. (2023) Digital Marketing: Strategy, Implementation and Practice. 8th ed. Harlow: Pearson Education.</li>
+          <li>Chaffey, D. and Ellis-Chadwick, F. (2019) Digital Marketing. 7th ed. Harlow: Pearson.</li>
+          <li>Chen, Y. (2024) Minimalist Platforms and User Focused Engagement. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Clark, H. (2024) Sustaining Digital Communities on Social Media. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Content Marketing Institute (2022) Content Strategy Essentials. [online] Available at: https://contentmarketinginstitute.com [Accessed 18 Apr. 2025].</li>
+          <li>Davies, J. (2024) Community Trust and Brand Conversion on Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Fishkin, R. (2018) Lost and Founder: A Painfully Honest Field Guide to the Startup World. New York: Portfolio.</li>
+          <li>Fournier, S. and Avery, J. (2011) Putting the ‘Relationship’ Back into CRM. Sloan Management Review, 52(3), pp.63–72.</li>
+          <li>Garcia, P. (2024) Belonging and Advocacy through Social Platforms. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Google (2018) The Need for Mobile Speed: How Mobile Latency Impacts Publisher Revenue. [online] Available at: https://www.thinkwithgoogle.com [Accessed 18 Apr. 2025].</li>
+          <li>Google Developers (2022) HTTPS as a Ranking Signal. [online] Available at: https://developers.google.com [Accessed 18 Apr. 2025].</li>
+          <li>Kaplan, A.M. and Haenlein, M. (2020) Users of the world, unite! The challenges and opportunities of Social Media. Business Horizons, 53(1), pp.59–68.</li>
+          <li>Kotler, P., Kartajaya, H. and Setiawan, I. (2021) Marketing 5.0: Technology for Humanity. Hoboken: Wiley.</li>
+          <li>Krug, S. (2014) Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability. 3rd ed. San Francisco: New Riders.</li>
+          <li>Lebrun, M. (2023) UX vs. UI Design: Roles, Differences and Overlaps. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Lee, A. (2023) Trend-Driven Campaigning and Awareness on Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>LEGO Foundation (2023) #BuildToGive Campaign Impact Report. [online] Available at: https://www.legofoundation.com [Accessed 18 Apr. 2025].</li>
+          <li>LEGO Group (2023) LEGO Ideas Annual Review. [online] Available at: https://ideas.lego.com [Accessed 18 Apr. 2025].</li>
+          <li>Leung, X.Y., Sun, J. and Bai, B. (2021) Short-Form Video and Marketing Performance. Journal of Interactive Marketing, 53, pp.15–29.</li>
+          <li>Lidwell, W., Holden, K. and Butler, J. (2010) Universal Principles of Design. 2nd ed. Beverly: Rockport Publishers.</li>
+          <li>Lipschultz, J.H. (2021) Social Media Communication: Concepts, Practices, Data, Law and Ethics. 3rd ed. New York: Routledge.</li>
+          <li>Marcotte, E. (2010) Responsive Web Design. A List Apart. [online] Available at: https://alistapart.com [Accessed 18 Apr. 2025].</li>
+          <li>Meta (2023) Threads by Instagram: Overview for Brands. [online] Available at: https://about.meta.com [Accessed 18 Apr. 2025].</li>
+          <li>Morville, P. and Rosenfeld, L. (2006) Information Architecture for the World Wide Web. 3rd ed. Sebastopol: O’Reilly Media.</li>
+          <li>Nguyen, T. (2024) Conversational Design in New Social Apps. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Nielsen, J. (2020) Usability Heuristics for User Interface Design. [online] Available at: https://www.nngroup.com [Accessed 18 Apr. 2025].</li>
+          <li>Norman, D.A. (2013) The Design of Everyday Things. Revised ed. New York: Basic Books.</li>
+          <li>Parker, M. (2024) Driving Conversions Without Direct Links. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Smith, L. (2022) Short-Form Video: Strategy and Fatigue in Creative Teams. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Statista (2024) Threads – Number of Users Worldwide 2023–2024. [online] Available at: https://www.statista.com [Accessed 18 Apr. 2025].</li>
+          <li>Thomas, A. (2024) Interactive Marketing and Social Dialogue on Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Walburg, S. (2021) The Anatomy of Modern Websites. Web UX Review. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>WARC (2023) Video Marketing Effectiveness: Benchmark Report. [online] Available at: https://www.warc.com [Accessed 18 Apr. 2025].</li>
+          <li>W3C (2023) Web Content Accessibility Guidelines (WCAG) 2.2. [online] Available at: https://www.w3.org/WAI [Accessed 18 Apr. 2025].</li>
+          <li>White, C. (2024) Conversion Strategies for Threads and Microblogs. [online] Available at: [Accessed 18 Apr. 2025].</li>
+          <li>Wilson, B. (2024) Polls and Engagement Metrics on Threads. [online] Available at: [Accessed 18 Apr. 2025].</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <footer class="bg-[#0a0a23] text-white text-center p-4">
+    <p>© 2025 Vo Minh Anh. All rights reserved.</p>
+  </footer>
+
+  <!-- Font Awesome for Social Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  
+    // Object để theo dõi trạng thái của từng slider
+    const sliderStates = {};
+  
+    // Khởi tạo trạng thái cho từng slider
+    document.querySelectorAll('.slider-container').forEach(container => {
+      const sliderId = container.id; // Ví dụ: 'slider1', 'slider2'
+      sliderStates[sliderId] = {
+        currentSlide: 0,
+        totalSlides: container.querySelectorAll('.slider img').length
+      };
+    });
+  
+    function changeSlide(sliderId, direction) {
+      const state = sliderStates[sliderId];
+      const sliderContent = document.getElementById(`${sliderId}-content`);
+  
+      // Cập nhật vị trí slide hiện tại
+      state.currentSlide += direction;
+  
+      // Xử lý vòng lặp
+      if (state.currentSlide < 0) {
+        state.currentSlide = state.totalSlides - 1;
+      } else if (state.currentSlide >= state.totalSlides) {
+        state.currentSlide = 0;
+      }
+  
+      // Cập nhật vị trí slider
+      sliderContent.style.transform = `translateX(${-state.currentSlide * 500}px)`; // 500px là chiều rộng của mỗi ảnh
+    }
+  </script>
+</body>
+</html>
